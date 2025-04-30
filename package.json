@@ -6,7 +6,7 @@
     "dev": "webpack-dev-server",
     "start:dev": "webpack serve --mode development",
     "dbserver": "json-server --watch server.json --port 3004",
-    "static": "http-server -c-1 -o",
+    "static": "http-server dist -p 3005",
     "build": "webpack",
     "build:prod": "webpack --mode production"
   },
@@ -22,6 +22,7 @@
     "css-loader": "^7.1.2",
     "css-minimizer-webpack-plugin": "^7.0.2",
     "html-webpack-plugin": "^5.6.3",
+    "http-server": "^14.1.1",
     "json-server": "^1.0.0-beta.3",
     "sass": "1.77",
     "sass-loader": "^16.0.5",
@@ -32,8 +33,10 @@
     "webpack-dev-server": "^4.15.2"
   },
   "dependencies": {
+    "@tinymce/tinymce-react": "^6.1.0",
     "bootstrap": "^5.3.5",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "tinymce": "^7.8.0"
   }
 }
