@@ -3,10 +3,12 @@ import packageJson from '../package.json';
 import BundledEditor from "./BundledEditor";
 function App() {
 
-
-  const apiUrl = "/api/todos";
+  const serverUrl = import.meta.env.VITE_APP_SERVER_URL ?? "";
+  const apiUrl = `${serverUrl}/api/todos`;  
   const [todos, setTodos] = React.useState([]);
 
+  const title = import.meta.env.VITE_APP_TITLE ?? "Hello World!";
+  const mode = import.meta.env.MODE ?? "development";
   const editorRef = useRef(null);
   const log = () => {
     if (editorRef.current) {
@@ -23,8 +25,8 @@ function App() {
 
   return (
     <div className="container p-3">
-      <h1>Hello World..!</h1>
-      <img src={'assets/images/ogure.png'} title="Ogure NG" style={{ maxHeight: 75 }} />
+      <h1>{title} / {mode}</h1>
+      <img src={'/images/ogure.png'} title="Ogure NG" style={{ maxHeight: 75 }} />
       <button style={{ color: 'blue' }}>{packageJson.version}</button>
       <p>Welcome to the application!</p>
       <h2>Todo List</h2>
