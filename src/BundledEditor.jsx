@@ -1,6 +1,5 @@
 import { Editor } from "@tinymce/tinymce-react";
-import React from "react";
-import tinymce from "tinymce/tinymce";
+import React from "react"; // does not compile without this import
 
 // TinyMCE so the global var exists
 import "tinymce/tinymce";
